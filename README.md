@@ -4,7 +4,7 @@ This repository summarizes an implementation of Adversarial Debiasing in PyTorch
 
 ### Problem Statement
 
-This dataset and problem statement were sourced from the Jigsaw Unintended Bias in Toxicity Classification competition on Kaggle. Due to the overrepresentation of certain identity groups (gender, racial, sexual identities) in toxic comments, regular toxicity classifiers suffer from unintended bias - they overpredict toxicity for certain groups versus others. This project is an attempt to implement the technique of Adversarial Debiasing to train a "fair" classifier that does not suffer from such biases. The objectives of this project were threefold:
+This dataset and problem statement were sourced from the Jigsaw Unintended Bias in Toxicity Classification competition on Kaggle. Due to the overrepresentation of certain identity groups (gender, racial, sexual identities) in toxic comments, regular toxicity classifiers suffer from unintended bias - they overpredict toxicity for certain groups versus others. This project is an attempt to implement the technique of Adversarial Debiasing to train a "fair" classifier that does not suffer from the particular problem of gender bias. The objectives of this project were threefold:
 - Extend the limited implementations of Adversarial Debiasing to a new domain of Toxicity Classification
 - Examine the fairness-performance tradeoff faced by our model, an issue that has not been commented on in much detail within previous implementations
 - Test the generalizability of our debiased model on a dataset from a different domain, that it has not been trained on
@@ -42,5 +42,13 @@ Fairness: Rising interest in the field of algorithmic fairness has brought about
 
 Since these fairness measures are boolean (True-False) in nature, we implement them, instead, in the form of differences in probabilities for the Female and Male protected classes. This allows us to utilize a continuous measure of difference between scores for both genders which we aim to reduce to zero through our adversarial debiasing approach.
 
+### Summary of Results
 
+The Regular classifier demonstrated bias across all three of the fairness metrics we examined. As compared to the Regular Classifier, the Fair Classifier (Classifier + Adversary) had a significant improvement in fairness across all the three fairness metrics we had chosen. Our Fair Classifier was able to comfortably beat the baseline XGBoost Model, however caused a small drop in performance over the Regular Classifier - demonstrating the tradeoff between performance and fairness.
+
+The Fair Classifier we trained generalized well to a new dataset from a different data source and domain as well. 
+
+The Adversarial training process itself was challenging - particularly the tuning of the fairness-performance tradeoff, structuring of the training cycles and the sharing of information across the predictor and adversary portions of the model.
+
+Details of the implementation and results can be found in our full project report (CIS_519_Project_Report (4).pdf). In case of questions feel free to reach out at shweta.shwetachopra@gmail.com
 
