@@ -13,8 +13,8 @@ This dataset and problem statement were sourced from the Jigsaw Unintended Bias 
 
 In 2018, Zhang et. al. [1] proposed adversarial networks as a technique for fighting model bias. This was a variation on generative adversarial networks proposed by Goodfellow, et. al [2]. The framework proposed involved the generator learning with respect to a protected attribute, like gender. This translated into a structure where the generator prevents the discriminator from being able to predict gender under a given overarching task. In their paper, Zhang et. al.[1] were able to demonstrate an improvement in fairness on an income classification task, using their Adversarial Debiasing approach, facing only a 1.5% compromise in overall accuracy. This process of Adversarial Debiasing can be generalized to any setting where the model uses a gradient based learning including both regression and classification tasks and is hence, suitable for our task at hand.
 
-[1] Brian Hu Zhang, Blake Lemoine, and Margaret Mitchell. 2018. Mitigating Unwanted Biases with Adversarial Learning. In AAAI/ACM Conference on Artificial Intelligence, Ethics, and Society (AIES‘18).
-[2] Ian Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, and Yoshua Bengio. 2014. Generative Adversarial Nets. In Advances in Neural Information Processing Systems (NIPS‘14).
+- [1] Brian Hu Zhang, Blake Lemoine, and Margaret Mitchell. 2018. Mitigating Unwanted Biases with Adversarial Learning. In AAAI/ACM Conference on Artificial Intelligence, Ethics, and Society (AIES‘18).
+- [2] Ian Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, and Yoshua Bengio. 2014. Generative Adversarial Nets. In Advances in Neural Information Processing Systems (NIPS‘14).
 
 ### Experiments
 
