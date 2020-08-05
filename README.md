@@ -50,5 +50,5 @@ The Fair Classifier we trained generalized well to a new dataset from a differen
 
 The Adversarial training process itself was challenging - particularly the tuning of the fairness-performance tradeoff, structuring of the training cycles and the sharing of information across the predictor and adversary portions of the model.
 
-Details of the implementation and results can be found in our full project report [Project Report](https://github.com/choprashweta/Adversarial-Debiasing/blob/master/CIS_519_Project_Report%20(4).pdf). In case of questions feel free to reach out at shweta.shwetachopra@gmail.com
+Details of the implementation and results can be found in our full [Project Report](https://github.com/choprashweta/Adversarial-Debiasing/blob/master/CIS_519_Project_Report%20(4).pdf). In case of questions feel free to reach out at shweta.shwetachopra@gmail.com
 
