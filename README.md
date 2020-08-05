@@ -20,11 +20,11 @@ In 2018, Zhang et. al. [1] proposed adversarial networks as a technique for figh
 
 We utilized three models for our experiments, to ascertain the success of our Adversarial Debiasing approach:
 
-- Baseline XGBoost Classifier: To get a baseline understanding of how well a strong simple classifier would perform on our task of toxicity classification, we utilized the distributed gradient boosting library XGBoost. This was implemented on top of a TF-IDF based bag of words representation of our comment text. This allowed us to have a benchmark, against which we could measure the performance of our regular classifier, thus ensuring we built a strong classifier to begin with. (Implemented in BoW_Toxicity_Classifier.ipynb)
+- Baseline XGBoost Classifier: To get a baseline understanding of how well a strong simple classifier would perform on our task of toxicity classification, we utilized the distributed gradient boosting library XGBoost. This was implemented on top of a TF-IDF based bag of words representation of our comment text. This allowed us to have a benchmark, against which we could measure the performance of our regular classifier, thus ensuring we built a strong classifier to begin with. Implementation can be found here: [BoW_Toxicity_Classifier.ipynb](https://github.com/choprashweta/Adversarial-Debiasing/blob/master/BoW_Toxicity_Classifier.ipynb)
 
-- Classifier: Our regular classifier was built in the form of a neural network. We utilized an uncased pretrained BERT layer to form our comment text representations, using a PyTorch implementation of Google Research’s BERT model, created by HuggingFace. On top of this, we added one dropout and three linear layers to create the Classifier. (Implemented in Regular_Classifier.ipynb)
+- Classifier: Our regular classifier was built in the form of a neural network. We utilized an uncased pretrained BERT layer to form our comment text representations, using a PyTorch implementation of Google Research’s BERT model, created by HuggingFace. On top of this, we added one dropout and three linear layers to create the Classifier. Implementation can be found here: [Regular_Classifier.ipynb](https://github.com/choprashweta/Adversarial-Debiasing/blob/master/Regular_Classifier.ipynb)
 
-- Fair Classifier (Classifier + Adversary): For our final model that implements the Adversarial Debiasing, we utilized our regular classifier, itself, as the predictor portion of the model. For the adversary, we utilized a distinct shallow network of two linear layers. The point of connection between the two networks, the classifier and the adversary, was that the hidden penultimate layer of the classifier formed the input to the adversary. (Implemented in Debiased_Classifier.ipynb)
+- Fair Classifier (Classifier + Adversary): For our final model that implements the Adversarial Debiasing, we utilized our regular classifier, itself, as the predictor portion of the model. For the adversary, we utilized a distinct shallow network of two linear layers. The point of connection between the two networks, the classifier and the adversary, was that the hidden penultimate layer of the classifier formed the input to the adversary. Implementation can be found here: [Debiased_Classifier.ipynb](https://github.com/choprashweta/Adversarial-Debiasing/blob/master/Debiased_Classifier.ipynb)
 
 Running our data through these three models, we calculated both performance and fairness metrics on a held-out test dataset to report our results.
 
@@ -50,5 +50,5 @@ The Fair Classifier we trained generalized well to a new dataset from a differen
 
 The Adversarial training process itself was challenging - particularly the tuning of the fairness-performance tradeoff, structuring of the training cycles and the sharing of information across the predictor and adversary portions of the model.
 
-Details of the implementation and results can be found in our full project report (CIS_519_Project_Report (4).pdf). In case of questions feel free to reach out at shweta.shwetachopra@gmail.com
+Details of the implementation and results can be found in our full project report (Project Report)[https://github.com/choprashweta/Adversarial-Debiasing/blob/master/CIS_519_Project_Report%20(4).pdf]. In case of questions feel free to reach out at shweta.shwetachopra@gmail.com
 
